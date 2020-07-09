@@ -1,0 +1,22 @@
+version: '3'
+services: 
+    php:
+        build: ./infrastructure/docker/php
+        volumes: 
+            - ./src:/code
+    redis:
+        image: redis:5
+        ports: 
+            - '30001:6379'
+    mysql:
+        image: mysql:5.7
+        restart: always
+        environment: 
+            MYSQL_DATABASE: 'db'
+            MYSQL_USER: 'root'
+            MYSQL_PASSWORD: 'ununoyundossontres'
+            MYSQL_ROOT_PASSWORD: 'ununoyundossontres'
+        ports:
+            - '20001:3306'
+        volumes: 
+            - ./my_db_data:/var/lib/mysql
