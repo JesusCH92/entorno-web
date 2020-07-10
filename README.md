@@ -17,3 +17,20 @@ cd /code/
 ```bash
 php index.php
 ```
+
+# Levantar un entorno en especifico (dev o prod)
+
+## Ejecutar lo siguiente para levantar el entorno en dev:
+```bash
+docker-compose up -d --build
+```
+
+## Ejecutar lo siguiente para levantar el entorno en prod
+```bash
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+```
+
+## Destruir el entorno
+```bash
+docker-compose down
+```
