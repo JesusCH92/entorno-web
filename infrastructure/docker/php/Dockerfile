@@ -11,7 +11,8 @@ RUN pecl install -o -f redis \
     && curl -sS https://getcomposer.org/installer -o composer-setup.php \
     && php composer-setup.php --install-dir=/usr/bin --filename=composer
 
-COPY php.ini /usr/local/etc/php
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+COPY php-dev.ini /usr/local/etc/php/conf.d/
 
 RUN apt-get install tree
 
