@@ -17,5 +17,3 @@ COPY php-personal-config.ini /usr/local/etc/php/conf.d/
 RUN apt-get install tree
 
 RUN apt-get update && apt-get install htop
-
-CMD [ "php", "--version" ]
