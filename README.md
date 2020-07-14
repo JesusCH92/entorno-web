@@ -54,13 +54,13 @@ git checkout entorno-test
 ```
 * Levantar los servicios según el entorno
     * Dev
-```bash
-docker-compose up -d --build
-```
+    ```bash
+    docker-compose up -d --build
+    ```
     * Prod
-```bash
-docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
-```
+    ```bash
+    docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+    ```
 * Una vez el servicio ha cargado correctamente, podrá acceder al endpoint:
 ```
 http://localhost:8080/
